@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <meta charset="utf8">
+        <title>代码展示-{{code.user}}</title>
+        <link rel="styleSheet" type='text/css' href="/static/css/bootstrap.min.css">
+        
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-4">
+                    作者：{{code.user}}
+                </div>
+                <div class="col-4">
+                    问题：{{code.question}}
+                </div>
+                <div class="col-4">
+                    修改时间：{{code.time}}
+                </div>
+                <div class="col-6"> 
+                    <p><b>代码展示：</b></p>
+                </div>
+                <div class="col-3"></div>
+                <div class="col3">
+                    <a href="/codeList">返回</a>
+                </div>
+            </div>
+            <iframe height="600px" width="1000px" scrolling='auto' srcdoc="{{code.content}}">
+
+            </iframe>
+        </div>
+    </body>
+</html>
