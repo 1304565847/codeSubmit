@@ -25,6 +25,9 @@ SECRET_KEY = ')+64f(5m5k7%olw((h_#^i3xawi)&8(prjwlnt&ec4%wk3)ja3'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
+# 解决多django项目sessionId冲突
+SESSION_COOKIE_NAME = "codeSubmit"
+
 ALLOWED_HOSTS = ["*"]
 
 
