@@ -21,7 +21,7 @@
             <br>
             <div class="card-body">
                 <p><b>问题说明：</b></p>
-                <pre>{{question.content}}</pre>
+                <pre>{{question.content | safe}}</pre>
                 <br>
                 <p><b>截止时间：</b> {{question.endTime}}</p>
                 <br>

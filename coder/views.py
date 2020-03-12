@@ -175,9 +175,13 @@ def index(request):
 @login_required
 def resetName(request):
     user = request.user
-    user.username = request.POST.get("username")
-    user.save()
-    return render(request, "userSet.html", {"info": "修改成功"})
+    try:
+        user.username = request.POST.get("username")
+        mes = "修改成功"
+        user.save()
+    except:
+        mes = "用户名已存在"
+    return render(request, "userSet.html", {"info": mes})
 
 @wrong
 @login_required
