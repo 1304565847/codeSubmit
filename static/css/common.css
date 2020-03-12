@@ -22,6 +22,7 @@ a span{
 .card{
     width: 180px;
     height: 100px;
+    margin-top: 30px;
     text-decoration: none;
     color: #000;
     margin-left: 20px;
@@ -36,4 +37,19 @@ a span{
 .card-text{
     padding-top: 30px;
     font-size: small;
+}
+
+.col-6 a{
+    font-size: small;
+    margin-right: 15px;
+    margin-left: 15px;
+}
+
+.card-img{
+    width: 100%;
+    height: 100%;
+}
+
+.popover-body{
+    white-space: pre-wrap;
 }

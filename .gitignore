@@ -5,3 +5,5 @@ html.db
 *.ini
 *.pid
 *.log
+static/img/*.jpg
+static/img/*.jpg

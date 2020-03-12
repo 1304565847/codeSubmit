@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from coder.views import *
+from img.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -31,5 +32,7 @@ urlpatterns = [
     path("submitAnswer/", submitAnswer),
     path('codeList', codeList),
     path("showCode/<Cid>", showCode),
-    path("", index)
+    path("", index),
+    path("img/", imgIndex),
+    path("upload/", uploadImg)
 ]

@@ -14,29 +14,36 @@
                 }
             })
         </script>
-        <div class="center-card">
-            <div class="card-header text-center">
-                <h4>{{question.title}}</h4>
-            </div>
-            <br>
-            <div class="card-body">
-                <p><b>问题说明：</b></p>
-                <pre>{{question.content | safe}}</pre>
-                <br>
-                <p><b>截止时间：</b> {{question.endTime}}</p>
-                <br>
-                <p><b>代码提交：</b></p>
-                <form action="/submitAnswer/" method="POST">
-                    {% csrf_token %}
-                    <input type="hidden" name="Qid" value="{{question.id}}">
-                    <textarea required class="form-control" style="height: 200px;" name="code" placeholder="在这里粘贴你的代码，每次提交都会覆盖上一次提交"></textarea>
-                    <br>
-                    <div class="text-center">
-                        <button class="btn btn-primary" type="submit">提交</button>
+        <div class="container">
+            <div class="row">
+                <div class="col-2"></div>
+                <div class="col-8">
+                    <div class="card">
+                        <div class="card-header text-center">
+                            <h4>{{question.title}}</h4>
+                        </div>
+                        <br>
+                        <div class="card-body">
+                            <p><b>问题说明：</b></p>
+                            <pre>{{question.content | safe}}</pre>
+                            <br>
+                            <p><b>截止时间：</b> {{question.endTime}}</p>
+                            <br>
+                            <p><b>代码提交：</b></p>
+                            <form action="/submitAnswer/" method="POST">
+                                {% csrf_token %}
+                                <input type="hidden" name="Qid" value="{{question.id}}">
+                                <textarea required class="form-control" style="height: 200px;" name="code" placeholder="在这里粘贴你的代码，每次提交都会覆盖上一次提交"></textarea>
+                                <br>
+                                <div class="text-center">
+                                    <button class="btn btn-primary" type="submit">提交</button>
+                                </div>
+                            </form>
+                            <div class="text-right">
+                                <a href="/">返回</a>
+                            </div>
+                        </div>
                     </div>
-                </form>
-                <div class="text-right">
-                    <a href="/">返回</a>
                 </div>
             </div>
         </div>
