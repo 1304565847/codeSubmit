@@ -6,6 +6,17 @@
     box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);
 }
 
+.center-card{
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #FFF;
+    width: 300px;
+    border-radius: 4px;
+    box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);
+}
+
 textarea{
     resize: none;
 }
