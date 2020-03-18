@@ -7,6 +7,7 @@ from django.utils import timezone
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import redirect, render
+from django.views.decorators.clickjacking import xframe_options_exempt
 import random
 
 def wrong(func):
@@ -20,6 +21,15 @@ def wrong(func):
 # Create your views here.
 
 sender = codeSender()
+
+@wrong
+@xframe_options_exempt      # 去掉frame限制
+def codePage(request, ansID):
+    try:
+        ans = Answer.objects.get(id=ansID)
+    except Answer.DoesNotExist:
+        return HttpResponse("ID Error")
+    return render(request, "empty.html", {"code": ans.content})
 
 @wrong
 def loginOut(request):
@@ -184,7 +194,7 @@ def resetName(request):
     return render(request, "userSet.html", {"info": mes})
 
 @wrong
-@login_required
+# @login_required
 def showCode(request, Cid):
     try:
         ans = Answer.objects.get(id=Cid)
@@ -193,14 +203,18 @@ def showCode(request, Cid):
     return render(request, "showCode.html", {'code': ans})
 
 
-@wrong
-@login_required
+# @wrong
+# @login_required
 def codeList(request):
+    if str(request.user) == "AnonymousUser":
+        isLogined = False
+    else:
+        isLogined = True
     codes = [{
         "id": i.id,
         "title": i.user.username+"-"+i.question.title
     } for i in Answer.objects.all()]
-    return render(request, "codeList.html", {"codes": codes})
+    return render(request, "codeList.html", {"codes": codes, "isLogined": isLogined})
 
 @wrong
 @login_required

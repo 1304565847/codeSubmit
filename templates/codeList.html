@@ -4,6 +4,7 @@
         <title>代码提交平台-代码展示</title>
         <link rel="styleSheet" type='text/css' href="/static/css/bootstrap.min.css">
         <link rel="styleSheet" type="text/css" href="/static/css/common.css">
+        <link rel="styleSheet" type="text/css" href="/static/css/show.css">
         <script src="/static/js/jquery-3.1.1.min.js"></script>
     </head>
     <body>
@@ -14,10 +15,15 @@
                         <h4><b>代码提交平台-代码展示</b></h4>
                     </div>
                     <div class="col-6 text-right">
+                        {% if isLogined %}
                         <a href="/img">图床</a>
                         <a href="/">主页</a>
                         <a href="/userSet">个人设置</a>
                         <a href="/logOut/">账号注销</a>
+                        {% else %}
+                        <a href="/register">注册</a>
+                        <a href='/login'>登录</a>
+                        {% endif %}
                     </div>
                 </div>
             </div>

@@ -7,3 +7,4 @@ html.db
 *.log
 static/img/*.jpg
 static/img/*.jpg
+.vscode

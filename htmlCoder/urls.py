@@ -32,6 +32,8 @@ urlpatterns = [
     path("submitAnswer/", submitAnswer),
     path('codeList', codeList),
     path("showCode/<Cid>", showCode),
+    path("codePage/<ansID>", codePage),
+
     path("", index),
     path("img/", imgIndex),
     path("upload/", uploadImg)

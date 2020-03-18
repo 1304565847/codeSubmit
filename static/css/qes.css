@@ -1,4 +1,5 @@
 .card{
+    box-sizing: border-box;
     border: none;
     margin-top: 50px;
     background-color: #FFF;
@@ -6,29 +7,17 @@
     box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);
 }
 
-.center-card{
-    position: absolute;
-    top:50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #FFF;
-    width: 300px;
-    border-radius: 4px;
-    box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);
-}
 
+/* 禁止拉伸代码框 */
 textarea{
     resize: none;
 }
 
-label{
-    font-size: small;
-}
-
 .card-body{
-    padding: 15px;
+    padding: 30px;
 }
 
+/* 自动换行 */
 pre{
     white-space: pre-wrap;
     word-wrap: break-word;

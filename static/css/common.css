@@ -11,10 +11,6 @@
     box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);
 }
 
-.header{
-    margin-top: 30px;
-}
-
 a span{
     font-size: x-small;
 }
@@ -38,18 +34,7 @@ a span{
     padding-top: 30px;
     font-size: small;
 }
-
-.col-6 a{
-    font-size: small;
-    margin-right: 15px;
-    margin-left: 15px;
-}
-
 .card-img{
     width: 100%;
     height: 100%;
-}
-
-.popover-body{
-    white-space: pre-wrap;
 }

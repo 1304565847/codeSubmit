@@ -3,31 +3,41 @@
         <meta charset="utf8">
         <title>代码展示-{{code.user}}</title>
         <link rel="styleSheet" type='text/css' href="/static/css/bootstrap.min.css">
-        
+        <link rel="styleSheet" type='text/css' href="/static/css/showCode.css">
     </head>
     <body>
         <div class="container">
-            <div class="row">
-                <div class="col-4">
-                    作者：{{code.user}}
+            <div class="card">
+                <div class="card-header">
+                    <div class="row">
+                        <div class="col-4">
+                            <span><b>作者：</b>{{code.user}}</span>
+                        </div>
+                        <div class="col-4">
+                            <span><b>问题：</b>{{code.question}}</span>
+                        </div>
+                        <div class="col-4">
+                            <span><b>修改时间：</b>{{code.time|date:"Y-n-d H:i"}}</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-4">
-                    问题：{{code.question}}
-                </div>
-                <div class="col-4">
-                    修改时间：{{code.time}}
-                </div>
-                <div class="col-6"> 
-                    <p><b>代码展示：</b></p>
-                </div>
-                <div class="col-3"></div>
-                <div class="col3">
-                    <a href="/codeList">返回</a>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-6"> 
+                            <p><b>代码展示：</b></p>
+                        </div>
+                        <div class="col-3">
+                            <a href="/codePage/{{code.id}}" target="_blank">查看代码页</a>
+                        </div>
+                        <div class="col-3">
+                            <a href="/codeList">返回</a>
+                        </div>
+                    </div>
+                    <iframe src="/codePage/{{code.id}}">
+                        <b>当前浏览器不支持iframe，请更换浏览器查看</b>
+                    </iframe>
                 </div>
             </div>
-            <iframe height="600px" width="1000px" scrolling='auto' srcdoc="{{code.content}}">
-
-            </iframe>
         </div>
     </body>
 </html>
